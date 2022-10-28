@@ -114,7 +114,7 @@ const AspectRatioCalculator = () => {
 					</Pane>
 				</div>
 
-				<div className={"p-10 bg-orange-light mt-6 rounded-2xl sf font-semibold w-auto mx-auto"}>
+				<div className={"p-10 bg-orange-light text-orange-heavy mt-6 rounded-2xl sf font-semibold w-auto mx-auto"}>
 					<h3 className={"text-5xl"}>
 						Aspect ratio
 					</h3>
