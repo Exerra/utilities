@@ -8,7 +8,7 @@ import Meta from "../components/meta";
 const Home: NextPage = () => {
 	return (
 		<>
-			<Meta title={"Exerra Utilities"} description={"Various utilities by Exerra. Currently there is only one utility - Aspect Ratio Calculator."} uri={"/"} image={"https://cdn.exerra.xyz/png/pfp.png"} />
+			<Meta title={"Exerra Utilities"} description={"Various utilities by Exerra. Currently there is only one utility - Aspect Ratio Calculator."} uri={"/"} />
 
 			<Header bg={"bg-blue-light"} fg={"text-blue-heavy"} title={"Exerra Utilities"} description={"Various utilities that might be handy"} icon={faSliders} />
 

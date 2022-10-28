@@ -26,7 +26,7 @@ const AspectRatioCalculator = () => {
 
 	return (
 		<>
-			<Meta title={"Aspect Ratio Calculator | Exerra Utilities"} description={"Calculate the missing value for a particular aspect ration in Aspect Ratio Calculator, an Exerra Utility project."} uri={"/utility/aspect-ratio-calculator"} image={"https://cdn.exerra.xyz/png/pfp.png"} />
+			<Meta title={"Aspect Ratio Calculator | Exerra Utilities"} description={"Calculate the missing value for a particular aspect ration in Aspect Ratio Calculator, an Exerra Utility project."} uri={"/utility/aspect-ratio-calculator"} />
 
 			<Header bg={"bg-blue-light"} fg={"text-blue-heavy"} title={"Aspect Ratio Calculator"} description={"Calculate the missing value for a particular aspect ratio"} icon={faPercentage} />
 
