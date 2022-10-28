@@ -4,7 +4,7 @@ import OpenGraphMeta from "./opengraph";
 import TwitterMeta from "./twitter";
 
 const Meta = ({ title, description, uri, image }: MetaProps) => {
-	const img = image ? image : "https://cdn.exerra.xyz/webp/mockups/exerra-utility.webp"
+	const img = image ? image : "https://cdn.exerra.xyz/webp/mockups/exerra-utilities.webp"
 
 	return (
 		<Head>
