@@ -42,10 +42,10 @@ const AspectRatioCalculator = () => {
 								placeholder={"1920"}
 								defaultValue={ogWidth}
 								onChange={async (c) => {
-									let value = parseInt(c.currentTarget.value)
+									const value = parseInt(c.currentTarget.value)
 									await setOGWidth(value)
 
-									let aspRatio = getAspectRatio(value, ogHeight)
+									const aspRatio = getAspectRatio(value, ogHeight)
 
 									setAspectRatio(aspRatio)
 
@@ -65,10 +65,10 @@ const AspectRatioCalculator = () => {
 								placeholder={"1080"}
 								defaultValue={ogHeight}
 								onChange={(c) => {
-									let value = parseInt(c.currentTarget.value)
+									const value = parseInt(c.currentTarget.value)
 									setOGHeight(value)
 
-									let aspRatio = getAspectRatio(ogWidth, value)
+									const aspRatio = getAspectRatio(ogWidth, value)
 
 									setAspectRatio(aspRatio)
 
@@ -89,7 +89,7 @@ const AspectRatioCalculator = () => {
 								className={"w-full bg-white/40 border border-[#FCD1DB] text-red-heavy/80 placeholder:text-red-heavy/50 rounded-xl px-5 py-5"}
 								onChange={(c) => {
 									setNewWidth(parseInt(c.currentTarget.value))
-									let value = Math.ceil((ogHeight / ogWidth) * parseInt(c.currentTarget.value))
+									const value = Math.ceil((ogHeight / ogWidth) * parseInt(c.currentTarget.value))
 
 									setNewHeight(isNaN(value) ? "" : value)
 								}}
@@ -104,7 +104,7 @@ const AspectRatioCalculator = () => {
 								className={"w-full bg-white/40 border border-[#FCD1DB] text-red-heavy/80 placeholder:text-red-heavy/50 rounded-xl px-5 py-5"}
 								onChange={(c) => {
 									setNewHeight(parseInt(c.currentTarget.value))
-									let value = Math.ceil((ogWidth / ogHeight) * parseInt(c.currentTarget.value))
+									const value = Math.ceil((ogWidth / ogHeight) * parseInt(c.currentTarget.value))
 
 									setNewWidth(isNaN(value) ? "" : value)
 								}}
