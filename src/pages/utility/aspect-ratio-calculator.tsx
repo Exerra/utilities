@@ -3,18 +3,8 @@ import { faPercentage, faSliders } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import getAspectRatio from "../../util/aspectratio";
 import Meta from "../../components/meta";
-import Breadcrumbs from 'nextjs-breadcrumbs';
-
-const Pane = ({ title, children, className }: { title: string, children: React.ReactNode, className: string }) => {
-	return (
-		<div className={`p-10 rounded-2xl sf font-semibold ${className}`}>
-			<h3 className={"text-5xl"}>{title}</h3>
-			<div className={"mt-10"}>
-				{children}
-			</div>
-		</div>
-	)
-}
+import Pane from "../../components/pane";
+import getInputValue from "../../util/getinputvalue";
 
 const AspectRatioCalculator = () => {
 	const [ogWidth, setOGWidth] = useState(1920)
@@ -42,7 +32,7 @@ const AspectRatioCalculator = () => {
 								placeholder={"1920"}
 								defaultValue={ogWidth}
 								onChange={async (c) => {
-									const value = parseInt(c.currentTarget.value)
+									const value = parseInt(getInputValue(c))
 									await setOGWidth(value)
 
 									const aspRatio = getAspectRatio(value, ogHeight)
@@ -65,7 +55,7 @@ const AspectRatioCalculator = () => {
 								placeholder={"1080"}
 								defaultValue={ogHeight}
 								onChange={(c) => {
-									const value = parseInt(c.currentTarget.value)
+									const value = parseInt(getInputValue(c))
 									setOGHeight(value)
 
 									const aspRatio = getAspectRatio(ogWidth, value)
@@ -88,8 +78,8 @@ const AspectRatioCalculator = () => {
 								id={"new-w"}
 								className={"w-full bg-white/40 border border-[#FCD1DB] text-red-heavy/80 placeholder:text-red-heavy/50 rounded-xl px-5 py-5"}
 								onChange={(c) => {
-									setNewWidth(parseInt(c.currentTarget.value))
-									const value = Math.ceil((ogHeight / ogWidth) * parseInt(c.currentTarget.value))
+									setNewWidth(parseInt(getInputValue(c)))
+									const value = Math.ceil((ogHeight / ogWidth) * parseInt(getInputValue(c)))
 
 									setNewHeight(isNaN(value) ? "" : value)
 								}}
@@ -103,8 +93,8 @@ const AspectRatioCalculator = () => {
 								id={"new-h"}
 								className={"w-full bg-white/40 border border-[#FCD1DB] text-red-heavy/80 placeholder:text-red-heavy/50 rounded-xl px-5 py-5"}
 								onChange={(c) => {
-									setNewHeight(parseInt(c.currentTarget.value))
-									const value = Math.ceil((ogWidth / ogHeight) * parseInt(c.currentTarget.value))
+									setNewHeight(parseInt(getInputValue(c)))
+									const value = Math.ceil((ogWidth / ogHeight) * parseInt(getInputValue(c)))
 
 									setNewWidth(isNaN(value) ? "" : value)
 								}}

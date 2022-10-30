@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/header";
 import UtilityCard from "../components/utilitycard";
-import { faPercent, faSliders } from "@fortawesome/free-solid-svg-icons";
+import { faGauge, faPercent, faSliders } from "@fortawesome/free-solid-svg-icons";
 import Meta from "../components/meta";
 
 const Home: NextPage = () => {
@@ -15,6 +15,7 @@ const Home: NextPage = () => {
 			<div className={"container md:mx-auto mt-10 md:mt-36 xl-mt:10 justify-center"}>
 				<div className={"flex flex-wrap gap-6 justify-between"} id={"utilities"}>
 					<UtilityCard title={"Aspect ratio calculator"} slug={"aspect-ratio-calculator"} bg={"#D7F0F1"} fg={"#0D2525"} hover={"#CBEBED"} icon={faPercent} />
+					<UtilityCard title={"Download time calculator"} slug={"download-time-calculator"} bg={"#FEF1F4"} fg={"#31040D"} hover={"#FDE1E8"} icon={faGauge} />
 				</div>
 			</div>
 		</>
