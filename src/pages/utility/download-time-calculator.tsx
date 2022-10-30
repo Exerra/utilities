@@ -8,7 +8,11 @@ import getInputValue from "../../util/getinputvalue";
 
 const calculateTime = (speed: number, speedMeasurement: string, size: number, sizeMeasurement: string): string => {
 	const finalize = (seconds: number): string => {
-		return humanizeDuration(seconds * 1000)
+		return humanizeDuration(seconds * 1000, {
+			round: true,
+			conjunction: " and ",
+			serialComma: false
+		})
 	}
 
 	const calculateSpeed = (speed: number, speedMeasurement: string): number => {
