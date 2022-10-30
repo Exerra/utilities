@@ -105,7 +105,7 @@ const DownloadTimeCalculator = () => {
 						</div>
 
 						<button
-							className={"w-full bg-white/50 border border-[#F0E3D6] text-beige-heavy/80 hover:bg-white/80 transition ease-in-out rounded-xl px-5 py-5"}
+							className={"w-full bg-white/50 border border-[#F0E3D6] text-beige-heavy/80 hover:bg-white/80 text-2xl transition ease-in-out rounded-xl px-5 py-5"}
 							onClick={() => {
 								console.log(size, sizeMeasurement, speed, speedMeasurement, (size! * 8))
 								if (!size || !sizeMeasurement || !speed || !speedMeasurement) return
@@ -113,7 +113,7 @@ const DownloadTimeCalculator = () => {
 								setCalculatedSpeed(calculateTime(speed, speedMeasurement, size, sizeMeasurement))
 							}}
 						>
-							Calculate speed
+							Calculate download time
 						</button>
 					</Pane>
 
