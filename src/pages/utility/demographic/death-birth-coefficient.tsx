@@ -26,7 +26,7 @@ const DeathBirthCoefficient = () => {
 			<Meta
 				title={"Death/Birth coefficient calculator | Exerra Utilities"}
 				description={"Calculate the death & birth coefficient based on death/birth rates and the population in Death/Birth coefficient calculator, an Exerra Utility project."}
-				uri={"/utility/aspect-ratio-calculator"}
+				uri={"/utility/demographic/death-birth-coefficient"}
 			/>
 
 			<Header
