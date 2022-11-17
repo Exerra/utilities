@@ -19,7 +19,7 @@ const UtilityCard = ( { title, slug, bg, fg, hover, icon }: NozareCardProps ) =>
 
 	return (
 		<Link href={`/utility/${slug}`}>
-			<div
+			<a
 				onMouseLeave={() => setHover( false )} onMouseEnter={() => setHover( true )}
 				className={`p-10 py-12 w-full basis-1/1 md:basis-1/3 grow xl:w-auto 2xl:basis-1/5 flex flex-row items-center justify-between rounded-2xl transition ease-in-out hover:cursor-pointer`}
 				style={{ backgroundColor: (hovering ? hover : bg), color: fg }}
@@ -28,7 +28,7 @@ const UtilityCard = ( { title, slug, bg, fg, hover, icon }: NozareCardProps ) =>
 				<div className={"sm:block ml-10 md:ml-18"}>
 					<FontAwesomeIcon className={"text-5xl md:text-6xl"} icon={icon}/>
 				</div>
-			</div>
+			</a>
 		</Link>
 	)
 }
