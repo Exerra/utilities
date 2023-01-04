@@ -14,17 +14,25 @@ const calculateTime = (speed: number, speedMeasurement: string, size: number, si
 			serialComma: false
 		})
 	}
+	
+	// 0.1 - 3 (mbps) jitter
+	const jitter = () => Math.round(Math.random() * 3) + 0.1
 
-	const calculateSpeed = (speed: number, speedMeasurement: string): number => {
-		if (speedMeasurement == "gbps") return speed * 1000
-
-		return speed
+	const calculateSpeed = (speed_: number, speedMeasurement: string): number => {
+		const speed = speed_ + jitter()
+		switch (speedMeasurement) {
+			case "gbps": return speed * 1000
+			case "kbps": return speed / 1000
+			default: return speed // mbps
+		}
 	}
 
 	const calculateSize = (size: number, sizeMeasurement: string): number => {
-		if (sizeMeasurement == "tb") return ((size * 8) * 1000)
-
-		return (size * 8)
+		switch (sizeMeasurement) {
+			case "tb": return ((size * 8) * 1000)
+			case "mb": return ((size * 8) / 1000)
+			default: return (size * 8) // gb
+		}
 	}
 
 	let seconds = (calculateSize(size, sizeMeasurement) / calculateSpeed(speed, speedMeasurement)) * 1000
@@ -71,6 +79,7 @@ const DownloadTimeCalculator = () => {
 										setSpeedMeasurement(getInputValue(c))
 									}}
 								>
+									<option value={"kbps"}>Kbps</option>
 									<option value={"mbps"}>Mbps</option>
 									<option value={"gbps"}>Gbps</option>
 								</select>
@@ -98,6 +107,7 @@ const DownloadTimeCalculator = () => {
 										setSizeMeasurement(getInputValue(c))
 									}}
 								>
+									<option value={"mb"}>MB</option>
 									<option value={"gb"}>GB</option>
 									<option value={"tb"}>TB</option>
 								</select>
